@@ -12,7 +12,7 @@ namespace Datos
     {
         static string cadenaConexion = "server = .\\SQLEXPRESS; database = DISCOS_DB; integrated security=true";
         private SqlConnection conexion = new SqlConnection(cadenaConexion);
-        private SqlCommand comando = new SqlCommand();
+        private SqlCommand comando = new SqlCommand();//SqlCommand es una clase en ADO.NET que se utiliza para ejecutar comandos SQL en una base de datos
         private SqlDataReader lector;
         public SqlDataReader Lector { get { return lector; } }
         /*
@@ -52,6 +52,26 @@ namespace Datos
                 conexion.Close();
             }
             return conexion;
+        }
+
+        public void setearConsulta(string consulta)
+        {
+            comando.CommandType = System.Data.CommandType.Text;//Establece el tipo de comando como texto
+            comando.CommandText = consulta;// asigna la consulta SQL proporcionada al comando.
+        }
+        public void leerTabla()
+        {
+            comando.Connection = conexion;
+            try
+            {
+                conexion.Open();
+                lector = comando.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }

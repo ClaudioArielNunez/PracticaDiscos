@@ -10,14 +10,16 @@ namespace Entidades
     public class Disco
     {
         //Atributos
-        private int Id { get; set; }
-        private string Titulo { get; set; }
-        private DateTime FechaLanzamiento { get; set; }
-        private int CantCanciones { get; set; } 
-        private string UrlImagen { get; set; }  
-        private int IdEstilo { get; set; }    
-        private int IdTipoEdicion { get; set; }
+        public int Id { get; set; }       
+        public string Titulo { get; set; }
+        public DateTime FechaLanzamiento { get; set; }
+        public int CantCanciones { get; set; } 
+        public string UrlImagen { get; set; }  
+        public int IdEstilo { get; set; }    
+        public int IdTipoEdicion { get; set; }
 
+        //Getters && Setters
+        
 
     }
 }

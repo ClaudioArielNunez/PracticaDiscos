@@ -55,7 +55,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(270, 381);
+            this.button1.Location = new System.Drawing.Point(542, 37);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(154, 36);
             this.button1.TabIndex = 2;
@@ -65,18 +65,23 @@
             // dgvDiscos
             // 
             this.dgvDiscos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDiscos.Location = new System.Drawing.Point(42, 120);
+            this.dgvDiscos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvDiscos.Location = new System.Drawing.Point(24, 86);
+            this.dgvDiscos.MultiSelect = false;
             this.dgvDiscos.Name = "dgvDiscos";
             this.dgvDiscos.RowHeadersWidth = 62;
             this.dgvDiscos.RowTemplate.Height = 28;
-            this.dgvDiscos.Size = new System.Drawing.Size(606, 229);
+            this.dgvDiscos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDiscos.Size = new System.Drawing.Size(809, 357);
             this.dgvDiscos.TabIndex = 3;
+            this.dgvDiscos.SelectionChanged += new System.EventHandler(this.dgvDiscos_SelectionChanged);
             // 
             // pbImgDisco
             // 
-            this.pbImgDisco.Location = new System.Drawing.Point(696, 120);
+            this.pbImgDisco.Location = new System.Drawing.Point(855, 86);
             this.pbImgDisco.Name = "pbImgDisco";
-            this.pbImgDisco.Size = new System.Drawing.Size(265, 229);
+            this.pbImgDisco.Size = new System.Drawing.Size(373, 357);
+            this.pbImgDisco.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImgDisco.TabIndex = 4;
             this.pbImgDisco.TabStop = false;
             // 
@@ -84,7 +89,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(994, 450);
+            this.ClientSize = new System.Drawing.Size(1251, 509);
             this.Controls.Add(this.pbImgDisco);
             this.Controls.Add(this.dgvDiscos);
             this.Controls.Add(this.button1);
