@@ -9,7 +9,7 @@ namespace Entidades
     public class Estilo
     {
         //Atributos
-        private int Id { get; set; }
+        private int Id;
         private string Descripcion { get; set; }
     }
 }

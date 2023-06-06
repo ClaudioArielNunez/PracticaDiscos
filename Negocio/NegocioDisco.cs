@@ -10,5 +10,6 @@ namespace Negocio
 {
     public class NegocioDisco
     {
+
     }
 }
