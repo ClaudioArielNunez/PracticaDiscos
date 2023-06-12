@@ -59,5 +59,15 @@ namespace PracticaDiscos.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _27317371_7305595 {
+            get {
+                object obj = ResourceManager.GetObject("27317371_7305595", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

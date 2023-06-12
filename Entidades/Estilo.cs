@@ -9,7 +9,11 @@ namespace Entidades
     public class Estilo
     {
         //Atributos
-        private int Id;
-        private string Descripcion { get; set; }
+        public int Id;
+        public string Descripcion { get; set; }
+        public override string ToString()
+        {
+            return Descripcion;
+        }
     }
 }

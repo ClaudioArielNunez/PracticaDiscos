@@ -18,7 +18,7 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("SELECT * from DISCOS");
+                datos.setearConsulta("SELECT D.Id, Titulo, FechaLanzamiento, CantidadCanciones, UrlImagenTapa, E.Descripcion AS Estilo, T.Descripcion as TipoEdicion FROM DISCOS D , ESTILOS E, TIPOSEDICION T WHERE D.IdEstilo = E.Id AND D.IdTipoEdicion = T.Id");
                 datos.leerTabla();
 
                 while (datos.Lector.Read())
@@ -29,8 +29,11 @@ namespace Negocio
                     nuevoDisco.FechaLanzamiento = (DateTime)datos.Lector["fechaLanzamiento"];
                     nuevoDisco.CantCanciones = (int)datos.Lector["cantidadCanciones"];
                     nuevoDisco.UrlImagen = (string)datos.Lector["urlImagenTapa"];
-                    nuevoDisco.IdEstilo = (int)datos.Lector["idEstilo"];
-                    nuevoDisco.IdTipoEdicion = (int)datos.Lector["idTipoEdicion"];
+
+                    nuevoDisco.Estilo = new Estilo();
+                    nuevoDisco.Estilo.Descripcion = (string)datos.Lector["Estilo"];
+                    nuevoDisco.TipoEdicion = new TipoEdicion();
+                    nuevoDisco.TipoEdicion.Descripcion = (string)datos.Lector["TipoEdicion"];
 
                     ListaDiscos.Add(nuevoDisco);
                 }

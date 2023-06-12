@@ -15,8 +15,8 @@ namespace Entidades
         public DateTime FechaLanzamiento { get; set; }
         public int CantCanciones { get; set; } 
         public string UrlImagen { get; set; }  
-        public int IdEstilo { get; set; }    
-        public int IdTipoEdicion { get; set; }
+        public Estilo Estilo { get; set; }    
+        public TipoEdicion TipoEdicion { get; set; }
 
         //Getters && Setters
         
