@@ -73,5 +73,26 @@ namespace Datos
                 throw ex;
             }
         }
+        public void ejecutarAccion()//metodo agregar Disco
+        {
+            comando.Connection = conexion;// se establece la conexión (conexion) para el comando (comando).
+                                          // Esto significa que el comando utilizará la conexión especificada para ejecutar acciones en la base de datos.
+            try
+            {
+                conexion.Open();
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        public void setearParametros(string nombre, object valor)
+        {
+            comando.Parameters.AddWithValue(nombre, valor);
+        }
+
+
     }
 }

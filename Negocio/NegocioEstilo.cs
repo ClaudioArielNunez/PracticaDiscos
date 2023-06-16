@@ -10,5 +10,37 @@ namespace Negocio
 {
     public class NegocioEstilo
     {
+        private List<Estilo> listaEstilosMusicales = new List<Estilo>();
+
+        public List<Estilo> listar()
+        {
+                AccesoDatos nuevoAcceso = new AccesoDatos();
+            try
+            {
+                nuevoAcceso.setearConsulta("SELECT Id, Descripcion FROM ESTILOS");
+                nuevoAcceso.leerTabla();
+
+                while (nuevoAcceso.Lector.Read())
+                {
+                    Estilo estilo = new Estilo();
+                    estilo.Id = (int)nuevoAcceso.Lector["Id"];
+                    estilo.Descripcion = (string)nuevoAcceso.Lector["Descripcion"];
+
+                    listaEstilosMusicales.Add(estilo);
+                }
+                return listaEstilosMusicales;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                nuevoAcceso.cerrar();
+            }
+
+            
+
+        }
     }
 }

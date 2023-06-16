@@ -59,5 +59,12 @@ namespace PracticaDiscos
             }
 
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            AgregarDisco discoNuevo = new AgregarDisco();
+            discoNuevo.ShowDialog();
+            cargar(); //chequear sin esto
+        }
     }
 }

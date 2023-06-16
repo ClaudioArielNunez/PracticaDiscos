@@ -50,5 +50,31 @@ namespace Negocio
             }
 
         }
+        public void agregar(Disco nuevoDisco)
+        {
+             AccesoDatos nuevoAcceso = new AccesoDatos();
+            try
+            {                
+                nuevoAcceso.setearConsulta("INSERT INTO DISCOS(Titulo, FechaLanzamiento, CantidadCanciones, UrlImagenTapa, IdEstilo, IdTipoEdicion) VALUES(@Titulo, @FechaLanzamiento, @CantidadCanciones, @UrlImagenTapa, @IdEstilo, @IdTipoEdicion)");
+                
+                nuevoAcceso.setearParametros("@Titulo", nuevoDisco.Titulo);
+                nuevoAcceso.setearParametros("@FechaLanzamiento", nuevoDisco.FechaLanzamiento);
+                nuevoAcceso.setearParametros("@CantidadCanciones", nuevoDisco.CantCanciones);
+                nuevoAcceso.setearParametros("@UrlImagenTapa", nuevoDisco.UrlImagen);
+                nuevoAcceso.setearParametros("@IdEstilo", nuevoDisco.Estilo.Id);
+                nuevoAcceso.setearParametros("@IdTipoEdicion", nuevoDisco.TipoEdicion.Id);
+
+
+                nuevoAcceso.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {                                             
+                throw ex;                
+            }
+            finally
+            {
+                nuevoAcceso.cerrar();
+            }
+        }
     }
 }

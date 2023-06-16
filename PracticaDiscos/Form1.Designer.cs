@@ -30,9 +30,10 @@
         {
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.dgvDiscos = new System.Windows.Forms.DataGridView();
             this.pbImgDisco = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiscos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImgDisco)).BeginInit();
             this.SuspendLayout();
@@ -53,14 +54,15 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "label1";
             // 
-            // button1
+            // btnAgregar
             // 
-            this.button1.Location = new System.Drawing.Point(1065, 31);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(154, 36);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAgregar.Location = new System.Drawing.Point(527, 476);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(154, 36);
+            this.btnAgregar.TabIndex = 2;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // dgvDiscos
             // 
@@ -72,18 +74,27 @@
             this.dgvDiscos.RowHeadersWidth = 62;
             this.dgvDiscos.RowTemplate.Height = 28;
             this.dgvDiscos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDiscos.Size = new System.Drawing.Size(561, 307);
+            this.dgvDiscos.Size = new System.Drawing.Size(607, 307);
             this.dgvDiscos.TabIndex = 3;
             this.dgvDiscos.SelectionChanged += new System.EventHandler(this.dgvDiscos_SelectionChanged);
             // 
             // pbImgDisco
             // 
-            this.pbImgDisco.Location = new System.Drawing.Point(1041, 154);
+            this.pbImgDisco.Location = new System.Drawing.Point(1078, 154);
             this.pbImgDisco.Name = "pbImgDisco";
             this.pbImgDisco.Size = new System.Drawing.Size(276, 307);
             this.pbImgDisco.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImgDisco.TabIndex = 4;
             this.pbImgDisco.TabStop = false;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(724, 476);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(154, 36);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -92,12 +103,17 @@
             this.AutoSize = true;
             this.BackgroundImage = global::PracticaDiscos.Properties.Resources._27317371_7305595;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1341, 611);
+            this.ClientSize = new System.Drawing.Size(1395, 611);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.pbImgDisco);
             this.Controls.Add(this.dgvDiscos);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1417, 667);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(1417, 667);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado de Discos";
@@ -113,9 +129,10 @@
 
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.DataGridView dgvDiscos;
         private System.Windows.Forms.PictureBox pbImgDisco;
+        private System.Windows.Forms.Button button2;
     }
 }
 
