@@ -39,11 +39,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.cmbEstilo = new System.Windows.Forms.ComboBox();
             this.cmbEdicion = new System.Windows.Forms.ComboBox();
-            this.pbxNewDisc = new System.Windows.Forms.PictureBox();
+            this.pbImgDisco = new System.Windows.Forms.PictureBox();
             this.btnOk = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxNewDisc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImgDisco)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -91,6 +91,7 @@
             this.txtUrlImg.Name = "txtUrlImg";
             this.txtUrlImg.Size = new System.Drawing.Size(255, 28);
             this.txtUrlImg.TabIndex = 3;
+            this.txtUrlImg.Leave += new System.EventHandler(this.txtUrlImg_Leave);
             // 
             // label4
             // 
@@ -150,14 +151,14 @@
             this.cmbEdicion.Size = new System.Drawing.Size(255, 30);
             this.cmbEdicion.TabIndex = 5;
             // 
-            // pbxNewDisc
+            // pbImgDisco
             // 
-            this.pbxNewDisc.Location = new System.Drawing.Point(36, 78);
-            this.pbxNewDisc.Name = "pbxNewDisc";
-            this.pbxNewDisc.Size = new System.Drawing.Size(343, 266);
-            this.pbxNewDisc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxNewDisc.TabIndex = 3;
-            this.pbxNewDisc.TabStop = false;
+            this.pbImgDisco.Location = new System.Drawing.Point(36, 78);
+            this.pbImgDisco.Name = "pbImgDisco";
+            this.pbImgDisco.Size = new System.Drawing.Size(343, 266);
+            this.pbImgDisco.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbImgDisco.TabIndex = 3;
+            this.pbImgDisco.TabStop = false;
             // 
             // btnOk
             // 
@@ -194,7 +195,7 @@
             this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
-            this.Controls.Add(this.pbxNewDisc);
+            this.Controls.Add(this.pbImgDisco);
             this.Controls.Add(this.cmbEdicion);
             this.Controls.Add(this.cmbEstilo);
             this.Controls.Add(this.txtCanciones);
@@ -209,7 +210,7 @@
             this.Name = "AgregarDisco";
             this.Text = "AgregarDisco";
             this.Load += new System.EventHandler(this.AgregarDisco_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pbxNewDisc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImgDisco)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,7 +229,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbEstilo;
         private System.Windows.Forms.ComboBox cmbEdicion;
-        private System.Windows.Forms.PictureBox pbxNewDisc;
+        private System.Windows.Forms.PictureBox pbImgDisco;
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.DateTimePicker dateTimePicker;

@@ -47,7 +47,7 @@ namespace PracticaDiscos
             
         }
 
-        private void cargarImagenxDefecto(string img)
+        public void cargarImagenxDefecto(string img)
         {
             try
             {
