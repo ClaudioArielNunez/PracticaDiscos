@@ -33,7 +33,7 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.dgvDiscos = new System.Windows.Forms.DataGridView();
             this.pbImgDisco = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiscos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImgDisco)).BeginInit();
             this.SuspendLayout();
@@ -43,7 +43,7 @@
             this.textBox1.Location = new System.Drawing.Point(755, 28);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(257, 26);
-            this.textBox1.TabIndex = 0;
+            this.textBox1.TabIndex = 3;
             // 
             // label1
             // 
@@ -59,7 +59,7 @@
             this.btnAgregar.Location = new System.Drawing.Point(527, 476);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(154, 36);
-            this.btnAgregar.TabIndex = 2;
+            this.btnAgregar.TabIndex = 1;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -75,7 +75,7 @@
             this.dgvDiscos.RowTemplate.Height = 28;
             this.dgvDiscos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDiscos.Size = new System.Drawing.Size(607, 307);
-            this.dgvDiscos.TabIndex = 3;
+            this.dgvDiscos.TabIndex = 0;
             this.dgvDiscos.SelectionChanged += new System.EventHandler(this.dgvDiscos_SelectionChanged);
             // 
             // pbImgDisco
@@ -87,14 +87,15 @@
             this.pbImgDisco.TabIndex = 4;
             this.pbImgDisco.TabStop = false;
             // 
-            // button2
+            // btnModificar
             // 
-            this.button2.Location = new System.Drawing.Point(724, 476);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(154, 36);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnModificar.Location = new System.Drawing.Point(724, 476);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(154, 36);
+            this.btnModificar.TabIndex = 2;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // Form1
             // 
@@ -104,7 +105,7 @@
             this.BackgroundImage = global::PracticaDiscos.Properties.Resources._27317371_7305595;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1395, 611);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.pbImgDisco);
             this.Controls.Add(this.dgvDiscos);
             this.Controls.Add(this.btnAgregar);
@@ -132,7 +133,7 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.DataGridView dgvDiscos;
         private System.Windows.Forms.PictureBox pbImgDisco;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnModificar;
     }
 }
 

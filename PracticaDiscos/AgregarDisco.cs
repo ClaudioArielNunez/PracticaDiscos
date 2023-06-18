@@ -14,17 +14,24 @@ namespace PracticaDiscos
 {
     public partial class AgregarDisco : Form
     {
+        private Disco discoNuevo = null;
         public AgregarDisco()
         {
             InitializeComponent();
         }
+        public AgregarDisco(Disco disco) //metodo para boton modificar
+        {
+            InitializeComponent();
+            this.discoNuevo = disco;
+        }
 
+        Disco nuevoDisco = new Disco();
         private void btnOk_Click(object sender, EventArgs e)
         {
             NegocioDisco negocio = new NegocioDisco();
-            Disco nuevoDisco = new Disco();
             try
             {
+                
                 nuevoDisco.Titulo = txtTitulo.Text;
                 nuevoDisco.FechaLanzamiento = dateTimePicker.Value;
                 nuevoDisco.CantCanciones = int.Parse(txtCanciones.Text);
@@ -59,6 +66,17 @@ namespace PracticaDiscos
             {
                 cmbEstilo.DataSource = negocioEstilo.listar();
                 cmbEdicion.DataSource = negEdicion.listar();
+
+                //Agrego validacion para articulo null
+                if (discoNuevo != null)
+                {
+                    txtTitulo.Text = discoNuevo.Titulo;
+                    txtCanciones.Text = discoNuevo.CantCanciones.ToString();
+                    txtUrlImg.Text = discoNuevo.UrlImagen;
+                    dateTimePicker.Value = discoNuevo.FechaLanzamiento;
+
+                    cargarImagen(discoNuevo.UrlImagen);
+                }
             }
             catch (Exception ex)
             {

@@ -64,7 +64,18 @@ namespace PracticaDiscos
         {
             AgregarDisco discoNuevo = new AgregarDisco();
             discoNuevo.ShowDialog();
-            cargar(); //chequear sin esto
+            cargar(); 
+        }        
+        
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Disco discoEditar;
+            discoEditar = (Disco)dgvDiscos.CurrentRow.DataBoundItem;
+            AgregarDisco frmModificar = new AgregarDisco(discoEditar);
+            frmModificar.ShowDialog();
+            Text = "Modificar Disco";
+            cargar();
         }
     }
 }
