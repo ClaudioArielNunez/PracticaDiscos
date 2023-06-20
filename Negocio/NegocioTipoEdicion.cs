@@ -10,11 +10,12 @@ namespace Negocio
 {
     public class NegocioTipoEdicion
     {
-        private List<TipoEdicion> listaTiposEdicion = new List<TipoEdicion>();
+        
 
         public List<TipoEdicion> listar()
         {
-                AccesoDatos nuevoAcceso = new AccesoDatos();
+            List<TipoEdicion> listaTiposEdicion = new List<TipoEdicion>();
+            AccesoDatos nuevoAcceso = new AccesoDatos();
             try
             {
                 nuevoAcceso.setearConsulta("SELECT Id, Descripcion FROM TIPOSEDICION");
@@ -23,7 +24,7 @@ namespace Negocio
                 while(nuevoAcceso.Lector.Read())
                 {
                     TipoEdicion tipoEdicion = new TipoEdicion();
-                    tipoEdicion.Id = (int)nuevoAcceso.Lector["id"];
+                    tipoEdicion.Id = (int)nuevoAcceso.Lector["Id"];
                     tipoEdicion.Descripcion = (string)nuevoAcceso.Lector["Descripcion"];
 
                     listaTiposEdicion.Add(tipoEdicion);

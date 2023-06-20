@@ -14,7 +14,7 @@ namespace PracticaDiscos
 {
     public partial class AgregarDisco : Form
     {
-        private Disco discoNuevo = null;
+        private Disco nuevoDisco = null;
         public AgregarDisco()
         {
             InitializeComponent();
@@ -22,15 +22,19 @@ namespace PracticaDiscos
         public AgregarDisco(Disco disco) //metodo para boton modificar
         {
             InitializeComponent();
-            this.discoNuevo = disco;
+            this.nuevoDisco = disco;
         }
 
-        Disco nuevoDisco = new Disco();
+        //Disco nuevoDisco = new Disco();
         private void btnOk_Click(object sender, EventArgs e)
         {
             NegocioDisco negocio = new NegocioDisco();
             try
             {
+                if (nuevoDisco == null)
+                {
+                    nuevoDisco = new Disco();
+                }             
                 
                 nuevoDisco.Titulo = txtTitulo.Text;
                 nuevoDisco.FechaLanzamiento = dateTimePicker.Value;
@@ -63,24 +67,34 @@ namespace PracticaDiscos
             NegocioTipoEdicion negEdicion = new NegocioTipoEdicion();
 
             try
-            {
+            {                               
                 cmbEstilo.DataSource = negocioEstilo.listar();
+                cmbEstilo.ValueMember = "Id";
+                cmbEstilo.DisplayMember = "Descripcion";
+                
                 cmbEdicion.DataSource = negEdicion.listar();
+                cmbEdicion.DisplayMember = "Descripcion";
+                cmbEdicion.ValueMember = "Id";
+
+
 
                 //Agrego validacion para articulo null
-                if (discoNuevo != null)
+                if (nuevoDisco != null)
                 {
-                    txtTitulo.Text = discoNuevo.Titulo;
-                    txtCanciones.Text = discoNuevo.CantCanciones.ToString();
-                    txtUrlImg.Text = discoNuevo.UrlImagen;
-                    dateTimePicker.Value = discoNuevo.FechaLanzamiento;
-
-                    cargarImagen(discoNuevo.UrlImagen);
+                    txtTitulo.Text = nuevoDisco.Titulo;
+                    txtCanciones.Text = nuevoDisco.CantCanciones.ToString();
+                    txtUrlImg.Text = nuevoDisco.UrlImagen;
+                    dateTimePicker.Value = nuevoDisco.FechaLanzamiento;
+                    cmbEstilo.SelectedValue = nuevoDisco.Estilo.Id;
+                    cmbEdicion.SelectedValue = nuevoDisco.TipoEdicion.Id;
+                    cargarImagen(nuevoDisco.UrlImagen);
+                    
                 }
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Source);
                 MessageBox.Show("No se pudo cargar: "+ ex.ToString());
             }
         }

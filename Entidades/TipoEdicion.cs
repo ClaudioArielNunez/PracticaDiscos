@@ -8,7 +8,7 @@ namespace Entidades
 {
     public class TipoEdicion
     {//Atributos
-        public int Id;
+        public int Id { get; set; }
         public string Descripcion { get; set; }
 
         public override string ToString()

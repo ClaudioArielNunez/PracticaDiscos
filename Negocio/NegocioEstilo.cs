@@ -10,10 +10,10 @@ namespace Negocio
 {
     public class NegocioEstilo
     {
-        private List<Estilo> listaEstilosMusicales = new List<Estilo>();
 
         public List<Estilo> listar()
         {
+                List<Estilo> listaEstilosMusicales = new List<Estilo>();
                 AccesoDatos nuevoAcceso = new AccesoDatos();
             try
             {
