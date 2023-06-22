@@ -103,5 +103,23 @@ namespace Negocio
                 datos.cerrar();
             }
         }
+        public void eliminar(int idDisco)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            datos.setearConsulta("DELETE from DISCOS WHERE Id = @idDisco");
+            try
+            {
+                datos.setearParametros("@idDisco",idDisco);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrar();
+            }
+        }
     }
 }

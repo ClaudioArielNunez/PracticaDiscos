@@ -77,5 +77,27 @@ namespace PracticaDiscos
             Text = "Modificar Disco";
             cargar();
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                NegocioDisco negocio = new NegocioDisco();
+                Disco discoSeleccionado; //No se puede instanciar de nuevo, ya existe
+
+                DialogResult respuesta = MessageBox.Show("Seguro de eliminarlo?","Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if(respuesta == DialogResult.Yes)
+                {                    
+                    discoSeleccionado = (Disco)dgvDiscos.CurrentRow.DataBoundItem;
+                    negocio.eliminar(discoSeleccionado.Id);
+                    cargar();
+                }
+                                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("El disco no se pudo eliminar: "+ ex.ToString());
+            }
+        }
     }
 }
