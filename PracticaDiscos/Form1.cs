@@ -121,5 +121,39 @@ namespace PracticaDiscos
                 MessageBox.Show("No se pudo enviar a la papelera este disco");
             }
         }
+
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            List<Disco> listaFiltrada;
+            listaFiltrada = Discos.FindAll(x => x.Titulo.ToUpper().Contains(textFiltro.Text.ToUpper()));
+                        
+            dgvDiscos.DataSource = null;
+            dgvDiscos.DataSource = listaFiltrada;
+            ocultarColumnas();
+        }
+
+        private void textFiltro_TextChanged(object sender, EventArgs e)
+        {
+            List<Disco> lista;
+            string titulo = textFiltro.Text;
+            if (titulo.Length >= 3)
+            {
+                
+                lista = Discos.FindAll(x => x.Titulo.ToUpper().Contains(titulo.ToUpper()));
+            }
+            else
+            {
+                lista = Discos;
+            }
+            dgvDiscos.DataSource = null;
+            dgvDiscos.DataSource = lista;
+            ocultarColumnas();
+            
+        }
+        private void ocultarColumnas()
+        {
+            dgvDiscos.Columns["Id"].Visible = false;
+            dgvDiscos.Columns["UrlImagen"].Visible = false;
+        }
     }
 }

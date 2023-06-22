@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textFiltro = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.dgvDiscos = new System.Windows.Forms.DataGridView();
@@ -36,25 +36,28 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnPapelera = new System.Windows.Forms.Button();
+            this.btnFiltrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiscos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImgDisco)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // textFiltro
             // 
-            this.textBox1.Location = new System.Drawing.Point(755, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(257, 26);
-            this.textBox1.TabIndex = 3;
+            this.textFiltro.Location = new System.Drawing.Point(774, 28);
+            this.textFiltro.Name = "textFiltro";
+            this.textFiltro.Size = new System.Drawing.Size(257, 26);
+            this.textFiltro.TabIndex = 3;
+            this.textFiltro.TextChanged += new System.EventHandler(this.textFiltro_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.label1.Location = new System.Drawing.Point(666, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 20);
+            this.label1.Size = new System.Drawing.Size(99, 20);
             this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
+            this.label1.Text = "Filtro Rapido";
             // 
             // btnAgregar
             // 
@@ -119,6 +122,16 @@
             this.btnPapelera.UseVisualStyleBackColor = true;
             this.btnPapelera.Click += new System.EventHandler(this.btnPapelera_Click);
             // 
+            // btnFiltrar
+            // 
+            this.btnFiltrar.Location = new System.Drawing.Point(1051, 25);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(80, 32);
+            this.btnFiltrar.TabIndex = 7;
+            this.btnFiltrar.Text = "Filtrar";
+            this.btnFiltrar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -127,6 +140,7 @@
             this.BackgroundImage = global::PracticaDiscos.Properties.Resources._27317371_7305595;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1395, 611);
+            this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.btnPapelera);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
@@ -134,7 +148,7 @@
             this.Controls.Add(this.dgvDiscos);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textFiltro);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1417, 667);
             this.MinimizeBox = false;
@@ -152,7 +166,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textFiltro;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.DataGridView dgvDiscos;
@@ -160,6 +174,7 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnPapelera;
+        private System.Windows.Forms.Button btnFiltrar;
     }
 }
 
