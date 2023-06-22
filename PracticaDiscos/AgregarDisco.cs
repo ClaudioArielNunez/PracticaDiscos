@@ -39,15 +39,22 @@ namespace PracticaDiscos
                 nuevoDisco.Titulo = txtTitulo.Text;
                 nuevoDisco.FechaLanzamiento = dateTimePicker.Value;
                 nuevoDisco.CantCanciones = int.Parse(txtCanciones.Text);
-                nuevoDisco.UrlImagen = txtUrlImg.Text;
-
-                //cargarImagen(nuevoDisco.UrlImagen);
+                nuevoDisco.UrlImagen = txtUrlImg.Text;                
                 
                 nuevoDisco.Estilo = (Estilo)cmbEstilo.SelectedItem;
                 nuevoDisco.TipoEdicion = (TipoEdicion)cmbEdicion.SelectedItem;
 
-                negocio.agregar(nuevoDisco);
-                MessageBox.Show("Agregado con exito");
+                if (nuevoDisco.Id != 0)
+                {
+                    negocio.modificar(nuevoDisco);
+                    MessageBox.Show("Modificado con exito");
+                }
+                else
+                {
+                    negocio.agregar(nuevoDisco);
+                    MessageBox.Show("Agregado con exito");
+                }                
+
                 this.Close();
             }
             catch (Exception ex)

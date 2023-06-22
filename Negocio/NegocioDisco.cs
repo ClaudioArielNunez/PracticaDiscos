@@ -79,5 +79,29 @@ namespace Negocio
                 nuevoAcceso.cerrar();
             }
         }
+        public void modificar(Disco disco)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("UPDATE DISCOS SET Titulo = @titulo, FechaLanzamiento = @fechaLanzamiento, CantidadCanciones=@cantidadCanciones, UrlImagenTapa=@urlImagenTapa, IdEstilo=@idEstilo, IdTipoEdicion=@idTipoEdicion WHERE Id = @id");
+                datos.setearParametros("@titulo", disco.Titulo);
+                datos.setearParametros("@fechaLanzamiento",disco.FechaLanzamiento);
+                datos.setearParametros("@cantidadCanciones",disco.CantCanciones);
+                datos.setearParametros("@urlImagenTapa",disco.UrlImagen);
+                datos.setearParametros("@idEstilo",disco.Estilo.Id);
+                datos.setearParametros("@idTipoEdicion",disco.TipoEdicion.Id);
+                datos.setearParametros("@id",disco.Id);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrar();
+            }
+        }
     }
 }
