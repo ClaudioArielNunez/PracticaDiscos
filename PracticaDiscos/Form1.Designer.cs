@@ -35,6 +35,7 @@
             this.pbImgDisco = new System.Windows.Forms.PictureBox();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnPapelera = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiscos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImgDisco)).BeginInit();
             this.SuspendLayout();
@@ -108,6 +109,16 @@
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // btnPapelera
+            // 
+            this.btnPapelera.Location = new System.Drawing.Point(1104, 476);
+            this.btnPapelera.Name = "btnPapelera";
+            this.btnPapelera.Size = new System.Drawing.Size(160, 34);
+            this.btnPapelera.TabIndex = 6;
+            this.btnPapelera.Text = "Enviar a Papelera";
+            this.btnPapelera.UseVisualStyleBackColor = true;
+            this.btnPapelera.Click += new System.EventHandler(this.btnPapelera_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -116,6 +127,7 @@
             this.BackgroundImage = global::PracticaDiscos.Properties.Resources._27317371_7305595;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1395, 611);
+            this.Controls.Add(this.btnPapelera);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.pbImgDisco);
@@ -147,6 +159,7 @@
         private System.Windows.Forms.PictureBox pbImgDisco;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnPapelera;
     }
 }
 

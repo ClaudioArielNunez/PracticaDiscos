@@ -99,5 +99,27 @@ namespace PracticaDiscos
                 MessageBox.Show("El disco no se pudo eliminar: "+ ex.ToString());
             }
         }
+
+        private void btnPapelera_Click(object sender, EventArgs e)
+        {
+            NegocioDisco negocio = new NegocioDisco();
+            DialogResult resultado = MessageBox.Show("Envias a la papelera este disco?", "Papelera", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            
+            try
+            {
+                if(resultado == DialogResult.Yes)
+                {
+                    Disco discoSeleccionado = (Disco)dgvDiscos.CurrentRow.DataBoundItem;
+                    negocio.enviarPapelera(discoSeleccionado.Id);
+                    MessageBox.Show("Disco enviado a papelera");
+                    cargar();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo enviar a la papelera este disco");
+            }
+        }
     }
 }

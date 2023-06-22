@@ -18,7 +18,7 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("SELECT D.Id, Titulo, FechaLanzamiento, CantidadCanciones, UrlImagenTapa,D.IdEstilo ,E.Descripcion AS Estilo, D.IdTipoEdicion,T.Descripcion as TipoEdicion FROM DISCOS D , ESTILOS E, TIPOSEDICION T WHERE D.IdEstilo = E.Id AND D.IdTipoEdicion = T.Id");
+                datos.setearConsulta("SELECT D.Id, Titulo, FechaLanzamiento, CantidadCanciones, UrlImagenTapa,D.IdEstilo ,E.Descripcion AS Estilo, D.IdTipoEdicion,T.Descripcion as TipoEdicion FROM DISCOS D , ESTILOS E, TIPOSEDICION T WHERE D.IdEstilo = E.Id AND D.IdTipoEdicion = T.Id and D.Estado = 1");
                 datos.leerTabla();
 
                 while (datos.Lector.Read())
@@ -120,6 +120,26 @@ namespace Negocio
             {
                 datos.cerrar();
             }
+        }
+        public void enviarPapelera(int idDisco)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("UPDATE DISCOS SET Estado = 0 WHERE Id = @id");
+                datos.setearParametros("@id", idDisco);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrar();
+            }
+            
+            
         }
     }
 }
