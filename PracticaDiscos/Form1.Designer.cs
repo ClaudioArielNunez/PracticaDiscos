@@ -37,6 +37,13 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnPapelera = new System.Windows.Forms.Button();
             this.btnFiltrar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtFiltroCombo = new System.Windows.Forms.TextBox();
+            this.cboCampo = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cboCriterio = new System.Windows.Forms.ComboBox();
+            this.btnFiltrarDos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiscos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImgDisco)).BeginInit();
             this.SuspendLayout();
@@ -132,6 +139,71 @@
             this.btnFiltrar.UseVisualStyleBackColor = true;
             this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(562, 110);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 20);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Campo:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.Location = new System.Drawing.Point(857, 110);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 20);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Criterio:";
+            // 
+            // txtFiltroCombo
+            // 
+            this.txtFiltroCombo.Location = new System.Drawing.Point(1177, 109);
+            this.txtFiltroCombo.Name = "txtFiltroCombo";
+            this.txtFiltroCombo.Size = new System.Drawing.Size(177, 26);
+            this.txtFiltroCombo.TabIndex = 10;
+            // 
+            // cboCampo
+            // 
+            this.cboCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCampo.FormattingEnabled = true;
+            this.cboCampo.Location = new System.Drawing.Point(632, 107);
+            this.cboCampo.Name = "cboCampo";
+            this.cboCampo.Size = new System.Drawing.Size(198, 28);
+            this.cboCampo.TabIndex = 11;
+            this.cboCampo.SelectedIndexChanged += new System.EventHandler(this.cboCampo_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.Location = new System.Drawing.Point(1114, 110);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(48, 20);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Filtro:";
+            // 
+            // cboCriterio
+            // 
+            this.cboCriterio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCriterio.FormattingEnabled = true;
+            this.cboCriterio.Location = new System.Drawing.Point(927, 107);
+            this.cboCriterio.Name = "cboCriterio";
+            this.cboCriterio.Size = new System.Drawing.Size(169, 28);
+            this.cboCriterio.TabIndex = 13;
+            // 
+            // btnFiltrarDos
+            // 
+            this.btnFiltrarDos.Location = new System.Drawing.Point(1294, 47);
+            this.btnFiltrarDos.Name = "btnFiltrarDos";
+            this.btnFiltrarDos.Size = new System.Drawing.Size(80, 32);
+            this.btnFiltrarDos.TabIndex = 14;
+            this.btnFiltrarDos.Text = "Filtrar";
+            this.btnFiltrarDos.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -140,6 +212,13 @@
             this.BackgroundImage = global::PracticaDiscos.Properties.Resources._27317371_7305595;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1395, 611);
+            this.Controls.Add(this.btnFiltrarDos);
+            this.Controls.Add(this.cboCriterio);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.cboCampo);
+            this.Controls.Add(this.txtFiltroCombo);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.btnPapelera);
             this.Controls.Add(this.btnEliminar);
@@ -175,6 +254,13 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnPapelera;
         private System.Windows.Forms.Button btnFiltrar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtFiltroCombo;
+        private System.Windows.Forms.ComboBox cboCampo;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cboCriterio;
+        private System.Windows.Forms.Button btnFiltrarDos;
     }
 }
 

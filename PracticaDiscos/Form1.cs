@@ -23,6 +23,10 @@ namespace PracticaDiscos
         private void Form1_Load(object sender, EventArgs e)
         {
             cargar();
+            cboCampo.Items.Add("Titulo");
+            cboCampo.Items.Add("Estilo");
+            cboCampo.Items.Add("Tipo Edición");
+            cboCampo.Items.Add("Cantidad Canciones");
 
         }
         private void cargar()
@@ -131,7 +135,7 @@ namespace PracticaDiscos
             dgvDiscos.DataSource = listaFiltrada;
             ocultarColumnas();
         }
-
+        
         private void textFiltro_TextChanged(object sender, EventArgs e)
         {
             List<Disco> lista;
@@ -147,13 +151,87 @@ namespace PracticaDiscos
             }
             dgvDiscos.DataSource = null;
             dgvDiscos.DataSource = lista;
-            ocultarColumnas();
-            
+            ocultarColumnas();            
         }
+        
         private void ocultarColumnas()
         {
             dgvDiscos.Columns["Id"].Visible = false;
             dgvDiscos.Columns["UrlImagen"].Visible = false;
+        }
+
+        private void cboCampo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string opcion = cboCampo.SelectedItem.ToString();
+
+            switch (opcion)
+            {
+                case "Cantidad Canciones":
+                    cboCriterio.Items.Clear();
+                    cboCriterio.Items.Add("Mayor a");
+                    cboCriterio.Items.Add("Menor a");
+                    cboCriterio.Items.Add("Igual a");
+                    break;
+                case "Titulo":
+                    cboCriterio.Items.Clear();
+                    cboCriterio.Items.Add("Comienza con");
+                    cboCriterio.Items.Add("Termina con");
+                    cboCriterio.Items.Add("Contiene");
+                    break;
+                case "Tipo Edición":
+                    cboCriterio.Items.Clear();
+                    cboCriterio.Items.Add("Vinilo");
+                    cboCriterio.Items.Add("CD");
+                    cboCriterio.Items.Add("Tape");
+                    cboCriterio.Items.Add("OnDemand");
+                    break;
+                default:
+                    cboCriterio.Items.Clear();
+                    cboCriterio.Items.Add("Pop");
+                    cboCriterio.Items.Add("Pop Punk");
+                    cboCriterio.Items.Add("Rock");
+                    cboCriterio.Items.Add("Reggae");
+                    cboCriterio.Items.Add("Country");
+                    cboCriterio.Items.Add("Electrónica");
+                    cboCriterio.Items.Add("Heavy Metal");
+                    break;                    
+            }
+            /*
+            if(opcion == "Cantidad Canciones")
+            {
+                cboCriterio.Items.Clear();
+                cboCriterio.Items.Add("Mayor a");
+                cboCriterio.Items.Add("Menor a");
+                cboCriterio.Items.Add("Igual a ");
+            }
+            else if(opcion == "Titulo")
+            {
+                cboCriterio.Items.Clear();
+                cboCriterio.Items.Add("Comienza con");
+                cboCriterio.Items.Add("Termina con");
+                cboCriterio.Items.Add("Contiene");
+            }
+            else if(opcion == "Tipo Edición")
+            {
+                cboCriterio.Items.Clear();
+                cboCriterio.Items.Add("Vinilo");
+                cboCriterio.Items.Add("CD");
+                cboCriterio.Items.Add("Tape");
+                cboCriterio.Items.Add("OnDemand");
+            }
+            else
+            {
+                cboCriterio.Items.Clear();
+                cboCriterio.Items.Add("Pop Punk");
+                cboCriterio.Items.Add("Pop");
+                cboCriterio.Items.Add("Rock");
+                cboCriterio.Items.Add("Reggae");
+                cboCriterio.Items.Add("Country");
+                cboCriterio.Items.Add("Electrónica");
+                cboCriterio.Items.Add("Heavy Metal");
+            }
+            */
+
         }
     }
 }

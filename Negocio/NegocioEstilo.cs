@@ -37,9 +37,7 @@ namespace Negocio
             finally
             {
                 nuevoAcceso.cerrar();
-            }
-
-            
+            }            
 
         }
     }
