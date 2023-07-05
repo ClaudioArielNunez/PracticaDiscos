@@ -43,7 +43,7 @@
             this.cboCampo = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cboCriterio = new System.Windows.Forms.ComboBox();
-            this.btnFiltrarDos = new System.Windows.Forms.Button();
+            this.btnFiltrarAvanzado = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiscos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImgDisco)).BeginInit();
             this.SuspendLayout();
@@ -195,14 +195,15 @@
             this.cboCriterio.Size = new System.Drawing.Size(169, 28);
             this.cboCriterio.TabIndex = 13;
             // 
-            // btnFiltrarDos
+            // btnFiltrarAvanzado
             // 
-            this.btnFiltrarDos.Location = new System.Drawing.Point(1294, 47);
-            this.btnFiltrarDos.Name = "btnFiltrarDos";
-            this.btnFiltrarDos.Size = new System.Drawing.Size(80, 32);
-            this.btnFiltrarDos.TabIndex = 14;
-            this.btnFiltrarDos.Text = "Filtrar";
-            this.btnFiltrarDos.UseVisualStyleBackColor = true;
+            this.btnFiltrarAvanzado.Location = new System.Drawing.Point(1294, 47);
+            this.btnFiltrarAvanzado.Name = "btnFiltrarAvanzado";
+            this.btnFiltrarAvanzado.Size = new System.Drawing.Size(80, 32);
+            this.btnFiltrarAvanzado.TabIndex = 14;
+            this.btnFiltrarAvanzado.Text = "Filtrar";
+            this.btnFiltrarAvanzado.UseVisualStyleBackColor = true;
+            this.btnFiltrarAvanzado.Click += new System.EventHandler(this.btnFiltrarDos_Click);
             // 
             // Form1
             // 
@@ -212,7 +213,7 @@
             this.BackgroundImage = global::PracticaDiscos.Properties.Resources._27317371_7305595;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1395, 611);
-            this.Controls.Add(this.btnFiltrarDos);
+            this.Controls.Add(this.btnFiltrarAvanzado);
             this.Controls.Add(this.cboCriterio);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cboCampo);
@@ -260,7 +261,7 @@
         private System.Windows.Forms.ComboBox cboCampo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cboCriterio;
-        private System.Windows.Forms.Button btnFiltrarDos;
+        private System.Windows.Forms.Button btnFiltrarAvanzado;
     }
 }
 

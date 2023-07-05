@@ -233,5 +233,23 @@ namespace PracticaDiscos
             */
 
         }
+
+        private void btnFiltrarDos_Click(object sender, EventArgs e)
+        {
+            NegocioDisco negocio = new NegocioDisco();
+            try
+            {
+                string campo = cboCampo.SelectedItem.ToString();
+                string criterio = cboCriterio.SelectedItem.ToString();
+                string filtro = txtFiltroCombo.Text;
+
+                dgvDiscos.DataSource = negocio.filtrar(campo,criterio,filtro);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }

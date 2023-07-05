@@ -141,5 +141,20 @@ namespace Negocio
             
             
         }
+        public List<Disco> filtrar(string campo, string criterio, string txtCombo)
+        {
+            List<Disco>lista = new List<Disco>();
+            AccesoDatos datos = new AccesoDatos();
+            
+            try
+            {
+                return lista;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }
