@@ -26,7 +26,7 @@ namespace Negocio
                     Disco nuevoDisco = new Disco();
                     nuevoDisco.Id = (int)datos.Lector["id"]; //El nombre entre [] tiene q ser igual a la BD
                     nuevoDisco.Titulo = (string)datos.Lector["titulo"];
-                    nuevoDisco.FechaLanzamiento = (DateTime)datos.Lector["fechaLanzamiento"];
+                    nuevoDisco.FechaLanzamiento = (DateTime)(datos.Lector["fechaLanzamiento"]);
                     nuevoDisco.CantCanciones = (int)datos.Lector["cantidadCanciones"];
                     nuevoDisco.UrlImagen = (string)datos.Lector["urlImagenTapa"];
 
@@ -148,12 +148,56 @@ namespace Negocio
             
             try
             {
+                
+                string consultaFiltro = "SELECT  D.Id, Titulo,FechaLanzamiento,CantidadCanciones, UrlImagenTapa,IdEstilo,IdTipoEdicion,E.Descripcion as Estilo,T.Descripcion as Edicion FROM DISCOS D INNER JOIN ESTILOS E ON D.IdEstilo = E.Id INNER JOIN TIPOSEDICION T ON D.IdTipoEdicion = T.Id WHERE ";
+                if(campo == "Cantidad Canciones")
+                {
+                    switch(criterio)
+                    {
+                        case "Mayor a":
+                            consultaFiltro += "CantidadCanciones > " + txtCombo;
+                            break;
+                        case "Menor a":
+                            consultaFiltro += "CantidadCanciones < " + txtCombo;
+                            break;
+                        default:
+                            consultaFiltro += "CantidadCanciones = " + txtCombo;
+                            break;
+                    }
+                }
+                //consultaFiltro = "SELECT  D.Id, Titulo,FechaLanzamiento,CantidadCanciones, UrlImagenTapa,IdEstilo,IdTipoEdicion,E.Descripcion as Estilo,T.Descripcion as Edicion FROM DISCOS D INNER JOIN ESTILOS E ON D.IdEstilo = E.Id INNER JOIN TIPOSEDICION T ON D.IdTipoEdicion = T.Id WHERE CantidadCanciones = 15";
+                
+                datos.setearConsulta(consultaFiltro);
+                datos.leerTabla();
+                while (datos.Lector.Read())
+                {
+                    Disco nuevo = new Disco();
+                    nuevo.Id = (int)datos.Lector["id"];
+                    nuevo.Titulo = (string)datos.Lector["titulo"];
+                    nuevo.FechaLanzamiento = (DateTime)datos.Lector["FechaLanzamiento"];
+                    nuevo.CantCanciones = (int)datos.Lector["CantidadCanciones"];
+                    nuevo.UrlImagen = (string)datos.Lector["UrlImagenTapa"];
+                    nuevo.Estilo = new Estilo();
+                    nuevo.Estilo.Id = (int)datos.Lector["IdEstilo"];
+                    nuevo.Estilo.Descripcion = (string)datos.Lector["Estilo"];
+                    nuevo.TipoEdicion = new TipoEdicion();
+                    nuevo.TipoEdicion.Id = (int)datos.Lector["IdTipoEdicion"];
+                    nuevo.TipoEdicion.Descripcion = (string)datos.Lector["Edicion"];
+
+                    lista.Add(nuevo);
+
+                }
                 return lista;
             }
             catch (Exception ex)
             {
 
-                throw ex;
+                throw ex;                
+            }
+            finally
+            {
+                datos.Lector.Close();
+                datos.cerrar();
             }
         }
     }
