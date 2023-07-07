@@ -41,7 +41,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtFiltroCombo = new System.Windows.Forms.TextBox();
             this.cboCampo = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblFiltro = new System.Windows.Forms.Label();
             this.cboCriterio = new System.Windows.Forms.ComboBox();
             this.btnFiltrarAvanzado = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiscos)).BeginInit();
@@ -176,15 +176,15 @@
             this.cboCampo.TabIndex = 11;
             this.cboCampo.SelectedIndexChanged += new System.EventHandler(this.cboCampo_SelectedIndexChanged);
             // 
-            // label4
+            // lblFiltro
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(1114, 110);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 20);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Filtro:";
+            this.lblFiltro.AutoSize = true;
+            this.lblFiltro.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblFiltro.Location = new System.Drawing.Point(1114, 110);
+            this.lblFiltro.Name = "lblFiltro";
+            this.lblFiltro.Size = new System.Drawing.Size(48, 20);
+            this.lblFiltro.TabIndex = 12;
+            this.lblFiltro.Text = "Filtro:";
             // 
             // cboCriterio
             // 
@@ -215,7 +215,7 @@
             this.ClientSize = new System.Drawing.Size(1395, 611);
             this.Controls.Add(this.btnFiltrarAvanzado);
             this.Controls.Add(this.cboCriterio);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblFiltro);
             this.Controls.Add(this.cboCampo);
             this.Controls.Add(this.txtFiltroCombo);
             this.Controls.Add(this.label3);
@@ -259,7 +259,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtFiltroCombo;
         private System.Windows.Forms.ComboBox cboCampo;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblFiltro;
         private System.Windows.Forms.ComboBox cboCriterio;
         private System.Windows.Forms.Button btnFiltrarAvanzado;
     }

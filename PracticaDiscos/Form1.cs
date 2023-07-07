@@ -162,7 +162,22 @@ namespace PracticaDiscos
 
         private void cboCampo_SelectedIndexChanged(object sender, EventArgs e)
         {
+            cargar();
             string opcion = cboCampo.SelectedItem.ToString();
+            if(opcion == "Tipo Edición" ||  opcion =="Estilo")
+            {
+                //txtFiltroCombo.ReadOnly = true;
+                txtFiltroCombo.Visible = false;
+                lblFiltro.Visible = false;
+                txtFiltroCombo.Clear();
+            }
+            else
+            {
+                //txtFiltroCombo.ReadOnly = false;
+                txtFiltroCombo.Visible = true;
+                lblFiltro.Visible = true;
+                txtFiltroCombo.Clear();
+            }
 
             switch (opcion)
             {
@@ -179,8 +194,9 @@ namespace PracticaDiscos
                     cboCriterio.Items.Add("Contiene");
                     break;
                 case "Tipo Edición":
+                    
                     cboCriterio.Items.Clear();
-                    cboCriterio.Items.Add("Vinilo");
+                    cboCriterio.Items.Add("Vinilo");                    
                     cboCriterio.Items.Add("CD");
                     cboCriterio.Items.Add("Tape");
                     cboCriterio.Items.Add("OnDemand");
@@ -194,7 +210,8 @@ namespace PracticaDiscos
                     cboCriterio.Items.Add("Country");
                     cboCriterio.Items.Add("Electrónica");
                     cboCriterio.Items.Add("Heavy Metal");
-                    break;                    
+                    break;
+                    
             }
             /*
             if(opcion == "Cantidad Canciones")
@@ -236,12 +253,21 @@ namespace PracticaDiscos
 
         private void btnFiltrarDos_Click(object sender, EventArgs e)
         {
+            
             NegocioDisco negocio = new NegocioDisco();
             try
             {
                 string campo = cboCampo.SelectedItem.ToString();
                 string criterio = cboCriterio.SelectedItem.ToString();
                 string filtro = txtFiltroCombo.Text;
+                if(campo == "Tipo Edición")
+                {
+                    filtro = "";                    
+                }
+                else if (campo == "Estilo")
+                {
+                    filtro = "";                    
+                }
 
                 dgvDiscos.DataSource = negocio.filtrar(campo,criterio,filtro);
             }

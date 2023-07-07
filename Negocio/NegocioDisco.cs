@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -146,6 +147,7 @@ namespace Negocio
             List<Disco>lista = new List<Disco>();
             AccesoDatos datos = new AccesoDatos();
             
+            
             try
             {
                 
@@ -165,8 +167,70 @@ namespace Negocio
                             break;
                     }
                 }
-                //consultaFiltro = "SELECT  D.Id, Titulo,FechaLanzamiento,CantidadCanciones, UrlImagenTapa,IdEstilo,IdTipoEdicion,E.Descripcion as Estilo,T.Descripcion as Edicion FROM DISCOS D INNER JOIN ESTILOS E ON D.IdEstilo = E.Id INNER JOIN TIPOSEDICION T ON D.IdTipoEdicion = T.Id WHERE CantidadCanciones = 15";
-                
+                else if(campo == "Titulo")
+                {
+                    switch (criterio)
+                    {
+                        case "Comienza con":
+                            consultaFiltro += " Titulo LIKE " + "'" + txtCombo + "%'";
+                            break;
+                        case "Termina con":
+                            consultaFiltro += " Titulo LIKE " + "'%" + txtCombo + "'";
+                            break;
+                        default:
+                            consultaFiltro += " Titulo LIKE " + "'%" + txtCombo + "%'";
+                            break;
+                    }
+                }
+                else if (campo == "Tipo Edición")
+                {                                      
+
+                    switch (criterio)
+                    {
+                        case "Vinilo":
+                            txtCombo = criterio; //otra variante
+                            consultaFiltro += " T.Descripcion = '" + txtCombo + "'";
+                            break;                                    
+                        case "CD":                            
+                            consultaFiltro += " T.Descripcion = '" +  (txtCombo = criterio)  + "'";
+                            break;                                    
+                        case "Tape":                                  
+                            consultaFiltro += " T.Descripcion = '" + (txtCombo=criterio)  + "'";
+                            break;                                    
+                        default:                                      
+                            consultaFiltro += " T.Descripcion = '" + (txtCombo = criterio) + "'";
+                            break;
+                    }
+                }
+                else
+                {
+                    switch (criterio)
+                    {
+                        case "Pop":
+                            consultaFiltro += " E.Descripcion = '" + (txtCombo = criterio) + "'";
+                            break;
+                        case "Pop Punk":
+                            consultaFiltro += " E.Descripcion = '" + (txtCombo = criterio) + "'";
+                            break;
+                        case "Rock":
+                            consultaFiltro += " E.Descripcion = '" + (txtCombo = criterio) + "'";
+                            break;
+                        case "Reggae":
+                            consultaFiltro += " E.Descripcion = '" + (txtCombo= criterio) + "'";
+                            break;
+                        case "Country":
+                            consultaFiltro += " E.Descripcion = '" + (txtCombo = criterio) + "'";
+                            break;
+                        case "Electrónica":
+                            consultaFiltro += " E.Descripcion = '" + (txtCombo = criterio) + "'";
+                            break;
+                        default:
+                            consultaFiltro += " E.Descripcion = '" + (txtCombo = criterio) + "'";
+                            break;
+                    }
+                }               
+
+
                 datos.setearConsulta(consultaFiltro);
                 datos.leerTabla();
                 while (datos.Lector.Read())
