@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.textFiltro = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -229,6 +230,7 @@
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textFiltro);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1417, 667);
             this.MinimizeBox = false;

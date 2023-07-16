@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarDisco));
             this.label1 = new System.Windows.Forms.Label();
             this.txtTitulo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -155,7 +156,7 @@
             // 
             this.pbImgDisco.Location = new System.Drawing.Point(36, 78);
             this.pbImgDisco.Name = "pbImgDisco";
-            this.pbImgDisco.Size = new System.Drawing.Size(343, 266);
+            this.pbImgDisco.Size = new System.Drawing.Size(343, 356);
             this.pbImgDisco.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbImgDisco.TabIndex = 3;
             this.pbImgDisco.TabStop = false;
@@ -207,6 +208,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtTitulo);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AgregarDisco";
             this.Text = "AgregarDisco";
             this.Load += new System.EventHandler(this.AgregarDisco_Load);

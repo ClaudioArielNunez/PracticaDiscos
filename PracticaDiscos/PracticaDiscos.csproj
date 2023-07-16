@@ -36,6 +36,9 @@
     <StartupObject>
     </StartupObject>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>iconmusic2_Ssf_icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -105,6 +108,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\27317371_7305595.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="iconmusic2_Ssf_icon.ico" />
+    <Content Include="iconmusic_jFy_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
