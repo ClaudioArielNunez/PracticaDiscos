@@ -61,7 +61,7 @@ namespace Negocio
         {
              AccesoDatos nuevoAcceso = new AccesoDatos();
             try
-            {                
+            {   //Agregamos el Estado, ya q nos va a servir para la eliminacion Logica 
                 nuevoAcceso.setearConsulta("INSERT INTO DISCOS(Titulo, FechaLanzamiento, CantidadCanciones, UrlImagenTapa, Estado,IdEstilo, IdTipoEdicion) VALUES(@Titulo, @FechaLanzamiento, @CantidadCanciones, @UrlImagenTapa, 1,@IdEstilo, @IdTipoEdicion)");
                 
                 nuevoAcceso.setearParametros("@Titulo", nuevoDisco.Titulo);
@@ -231,9 +231,9 @@ namespace Negocio
                             consultaFiltro += " E.Descripcion = '" + (txtCombo = criterio) + "'";
                             break;
                     }
-                }               
+                }
 
-
+                consultaFiltro += " AND Estado = 1 ";
                 datos.setearConsulta(consultaFiltro);
                 datos.leerTabla();
                 while (datos.Lector.Read())

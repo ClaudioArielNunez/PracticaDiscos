@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using Negocio;
+using System.Configuration;
 
 namespace PracticaDiscos
 {
@@ -128,12 +130,17 @@ namespace PracticaDiscos
         private void btnAgregarImg_Click(object sender, EventArgs e)
         {
             OpenFileDialog archivo = new OpenFileDialog();
-            archivo.Filter = "Archivos de imagen (*.jpg; *.png)|*.jpg; *.png";
+            archivo.Filter = "*.jpg;|*.jpg;|*.png;|*.png";
             if(archivo.ShowDialog() == DialogResult.OK)
             {
                 txtUrlImg.Text = archivo.FileName;
                 cargarImagen(archivo.FileName);
+
+                //Guardamos imagen en carpeta en C:
+                
+                File.Copy(archivo.FileName, ConfigurationManager.AppSettings["images_folder"] + archivo.SafeFileName);
             }
         }
+        
     }
 }
