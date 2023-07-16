@@ -39,7 +39,8 @@ namespace PracticaDiscos
                 nuevoDisco.Titulo = txtTitulo.Text;
                 nuevoDisco.FechaLanzamiento = dateTimePicker.Value;
                 nuevoDisco.CantCanciones = int.Parse(txtCanciones.Text);
-                nuevoDisco.UrlImagen = txtUrlImg.Text;                
+                nuevoDisco.UrlImagen = txtUrlImg.Text;
+                
                 
                 nuevoDisco.Estilo = (Estilo)cmbEstilo.SelectedItem;
                 nuevoDisco.TipoEdicion = (TipoEdicion)cmbEdicion.SelectedItem;
@@ -122,7 +123,17 @@ namespace PracticaDiscos
                 pbImgDisco.Load("https://cdn-icons-png.flaticon.com/512/1178/1178479.png");
                //MessageBox.Show("No se pudo cargar la imagen\nEl error se debe a: "+ex.ToString());
            }
-        }       
-        
+        }
+
+        private void btnAgregarImg_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog archivo = new OpenFileDialog();
+            archivo.Filter = "Archivos de imagen (*.jpg; *.png)|*.jpg; *.png";
+            if(archivo.ShowDialog() == DialogResult.OK)
+            {
+                txtUrlImg.Text = archivo.FileName;
+                cargarImagen(archivo.FileName);
+            }
+        }
     }
 }

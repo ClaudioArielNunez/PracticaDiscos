@@ -18,7 +18,7 @@ namespace Entidades
         public int CantCanciones { get; set; } 
         public DateTime FechaLanzamiento { get; set; }
 
-        //Getters && Setters
+        
         
 
     }

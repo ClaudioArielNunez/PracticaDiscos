@@ -37,7 +37,7 @@
     </StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>iconmusic2_Ssf_icon.ico</ApplicationIcon>
+    <ApplicationIcon>iconmusic3_uhI_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -111,6 +111,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="iconmusic2_Ssf_icon.ico" />
+    <Content Include="iconmusic3_uhI_icon.ico" />
     <Content Include="iconmusic_jFy_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

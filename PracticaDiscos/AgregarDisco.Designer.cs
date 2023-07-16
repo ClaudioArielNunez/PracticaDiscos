@@ -44,6 +44,8 @@
             this.btnOk = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.btnAgregarImg = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbImgDisco)).BeginInit();
             this.SuspendLayout();
             // 
@@ -116,7 +118,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(411, 276);
+            this.label5.Location = new System.Drawing.Point(411, 331);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 22);
             this.label5.TabIndex = 0;
@@ -126,7 +128,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(406, 322);
+            this.label6.Location = new System.Drawing.Point(406, 377);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(74, 22);
             this.label6.TabIndex = 0;
@@ -137,7 +139,7 @@
             this.cmbEstilo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstilo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEstilo.FormattingEnabled = true;
-            this.cmbEstilo.Location = new System.Drawing.Point(516, 268);
+            this.cmbEstilo.Location = new System.Drawing.Point(516, 323);
             this.cmbEstilo.Name = "cmbEstilo";
             this.cmbEstilo.Size = new System.Drawing.Size(255, 30);
             this.cmbEstilo.TabIndex = 4;
@@ -147,7 +149,7 @@
             this.cmbEdicion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEdicion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEdicion.FormattingEnabled = true;
-            this.cmbEdicion.Location = new System.Drawing.Point(516, 314);
+            this.cmbEdicion.Location = new System.Drawing.Point(516, 369);
             this.cmbEdicion.Name = "cmbEdicion";
             this.cmbEdicion.Size = new System.Drawing.Size(255, 30);
             this.cmbEdicion.TabIndex = 5;
@@ -163,7 +165,7 @@
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(459, 389);
+            this.btnOk.Location = new System.Drawing.Point(459, 444);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(133, 45);
             this.btnOk.TabIndex = 6;
@@ -173,7 +175,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(638, 389);
+            this.btnCancel.Location = new System.Drawing.Point(638, 444);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(133, 45);
             this.btnCancel.TabIndex = 7;
@@ -188,11 +190,33 @@
             this.dateTimePicker.Size = new System.Drawing.Size(255, 26);
             this.dateTimePicker.TabIndex = 9;
             // 
+            // btnAgregarImg
+            // 
+            this.btnAgregarImg.Location = new System.Drawing.Point(654, 261);
+            this.btnAgregarImg.Name = "btnAgregarImg";
+            this.btnAgregarImg.Size = new System.Drawing.Size(117, 48);
+            this.btnAgregarImg.TabIndex = 10;
+            this.btnAgregarImg.Text = "Imagen ";
+            this.btnAgregarImg.UseVisualStyleBackColor = true;
+            this.btnAgregarImg.Click += new System.EventHandler(this.btnAgregarImg_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(411, 273);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(198, 22);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Agregar desde carpeta:";
+            // 
             // AgregarDisco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 573);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.btnAgregarImg);
             this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
@@ -235,5 +259,7 @@
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
+        private System.Windows.Forms.Button btnAgregarImg;
+        private System.Windows.Forms.Label label7;
     }
 }

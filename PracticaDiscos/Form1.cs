@@ -35,7 +35,7 @@ namespace PracticaDiscos
             Discos = negocio.Listar();
             dgvDiscos.DataSource = Discos;
             dgvDiscos.Columns["UrlImagen"].Visible = false;
-            dgvDiscos.Columns["Id"].Visible = false;
+            dgvDiscos.Columns["Id"].Visible = false;            
             pbImgDisco.Load(Discos[0].UrlImagen);            
 
         }

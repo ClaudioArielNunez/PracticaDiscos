@@ -19,7 +19,7 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("SELECT D.Id, Titulo, FechaLanzamiento, CantidadCanciones, UrlImagenTapa,D.IdEstilo ,E.Descripcion AS Estilo, D.IdTipoEdicion,T.Descripcion as TipoEdicion FROM DISCOS D , ESTILOS E, TIPOSEDICION T WHERE D.IdEstilo = E.Id AND D.IdTipoEdicion = T.Id and D.Estado = 1");
+                datos.setearConsulta("SELECT D.Id, Titulo, FechaLanzamiento, CantidadCanciones, UrlImagenTapa, Estado, D.IdEstilo ,E.Descripcion AS Estilo, D.IdTipoEdicion,T.Descripcion as TipoEdicion FROM DISCOS D , ESTILOS E, TIPOSEDICION T WHERE D.IdEstilo = E.Id AND D.IdTipoEdicion = T.Id and D.Estado = 1");
                 datos.leerTabla();
 
                 while (datos.Lector.Read())
@@ -38,6 +38,7 @@ namespace Negocio
                     nuevoDisco.TipoEdicion = new TipoEdicion();
                     nuevoDisco.TipoEdicion.Id = (int)datos.Lector["IdTipoEdicion"];//necesario para el frm modificar
                     nuevoDisco.TipoEdicion.Descripcion = (string)datos.Lector["TipoEdicion"];
+                    
 
                     ListaDiscos.Add(nuevoDisco);
                 }
@@ -54,12 +55,14 @@ namespace Negocio
             }
 
         }
+
+        //Todos los discos que se agregan , inician con estado = 1 , para mostrarse en la grid
         public void agregar(Disco nuevoDisco)
         {
              AccesoDatos nuevoAcceso = new AccesoDatos();
             try
             {                
-                nuevoAcceso.setearConsulta("INSERT INTO DISCOS(Titulo, FechaLanzamiento, CantidadCanciones, UrlImagenTapa, IdEstilo, IdTipoEdicion) VALUES(@Titulo, @FechaLanzamiento, @CantidadCanciones, @UrlImagenTapa, @IdEstilo, @IdTipoEdicion)");
+                nuevoAcceso.setearConsulta("INSERT INTO DISCOS(Titulo, FechaLanzamiento, CantidadCanciones, UrlImagenTapa, Estado,IdEstilo, IdTipoEdicion) VALUES(@Titulo, @FechaLanzamiento, @CantidadCanciones, @UrlImagenTapa, 1,@IdEstilo, @IdTipoEdicion)");
                 
                 nuevoAcceso.setearParametros("@Titulo", nuevoDisco.Titulo);
                 nuevoAcceso.setearParametros("@FechaLanzamiento", nuevoDisco.FechaLanzamiento);
