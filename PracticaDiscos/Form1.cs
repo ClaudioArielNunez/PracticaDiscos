@@ -277,5 +277,24 @@ namespace PracticaDiscos
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void btnVerPapelera_Click(object sender, EventArgs e)
+        {
+            NegocioDisco negocio = new NegocioDisco();
+            try
+            {
+                List<Disco> listaEnPapelera = new List<Disco>();
+                listaEnPapelera = negocio.mostrarPapelera();
+                dgvDiscos.DataSource = listaEnPapelera;
+                dgvDiscos.Columns["UrlImagen"].Visible = false;
+                dgvDiscos.Columns["Id"].Visible = false;
+                pbImgDisco.Load(listaEnPapelera[0].UrlImagen);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se produjo un error: "+ ex.ToString());
+            }
+        }
     }
 }

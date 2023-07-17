@@ -17,9 +17,9 @@ namespace Entidades
         public TipoEdicion TipoEdicion { get; set; }
         public int CantCanciones { get; set; } 
         public DateTime FechaLanzamiento { get; set; }
+        //public bool Estado { get; set; }
 
-        
-        
+
 
     }
 }

@@ -45,6 +45,7 @@
             this.lblFiltro = new System.Windows.Forms.Label();
             this.cboCriterio = new System.Windows.Forms.ComboBox();
             this.btnFiltrarAvanzado = new System.Windows.Forms.Button();
+            this.btnVerPapelera = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiscos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImgDisco)).BeginInit();
             this.SuspendLayout();
@@ -69,9 +70,9 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(527, 476);
+            this.btnAgregar.Location = new System.Drawing.Point(491, 476);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(154, 36);
+            this.btnAgregar.Size = new System.Drawing.Size(142, 33);
             this.btnAgregar.TabIndex = 1;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -102,9 +103,9 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(724, 476);
+            this.btnModificar.Location = new System.Drawing.Point(667, 476);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(154, 36);
+            this.btnModificar.Size = new System.Drawing.Size(142, 33);
             this.btnModificar.TabIndex = 2;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -112,9 +113,9 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(918, 476);
+            this.btnEliminar.Location = new System.Drawing.Point(843, 479);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(154, 36);
+            this.btnEliminar.Size = new System.Drawing.Size(142, 33);
             this.btnEliminar.TabIndex = 5;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -122,9 +123,9 @@
             // 
             // btnPapelera
             // 
-            this.btnPapelera.Location = new System.Drawing.Point(1104, 476);
+            this.btnPapelera.Location = new System.Drawing.Point(1019, 479);
             this.btnPapelera.Name = "btnPapelera";
-            this.btnPapelera.Size = new System.Drawing.Size(160, 34);
+            this.btnPapelera.Size = new System.Drawing.Size(142, 33);
             this.btnPapelera.TabIndex = 6;
             this.btnPapelera.Text = "Enviar a Papelera";
             this.btnPapelera.UseVisualStyleBackColor = true;
@@ -206,6 +207,16 @@
             this.btnFiltrarAvanzado.UseVisualStyleBackColor = true;
             this.btnFiltrarAvanzado.Click += new System.EventHandler(this.btnFiltrarDos_Click);
             // 
+            // btnVerPapelera
+            // 
+            this.btnVerPapelera.Location = new System.Drawing.Point(1195, 476);
+            this.btnVerPapelera.Name = "btnVerPapelera";
+            this.btnVerPapelera.Size = new System.Drawing.Size(142, 33);
+            this.btnVerPapelera.TabIndex = 15;
+            this.btnVerPapelera.Text = "Ver Papelera";
+            this.btnVerPapelera.UseVisualStyleBackColor = true;
+            this.btnVerPapelera.Click += new System.EventHandler(this.btnVerPapelera_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -214,6 +225,7 @@
             this.BackgroundImage = global::PracticaDiscos.Properties.Resources._27317371_7305595;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1395, 611);
+            this.Controls.Add(this.btnVerPapelera);
             this.Controls.Add(this.btnFiltrarAvanzado);
             this.Controls.Add(this.cboCriterio);
             this.Controls.Add(this.lblFiltro);
@@ -264,6 +276,7 @@
         private System.Windows.Forms.Label lblFiltro;
         private System.Windows.Forms.ComboBox cboCriterio;
         private System.Windows.Forms.Button btnFiltrarAvanzado;
+        private System.Windows.Forms.Button btnVerPapelera;
     }
 }
 

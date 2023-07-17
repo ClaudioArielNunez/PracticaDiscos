@@ -20,6 +20,8 @@ namespace PracticaDiscos
         public AgregarDisco()
         {
             InitializeComponent();
+            txtEstado.Visible = false;
+            lblEstado.Visible = false;
         }
         public AgregarDisco(Disco disco) //metodo para boton modificar
         {
@@ -95,6 +97,7 @@ namespace PracticaDiscos
                     txtCanciones.Text = nuevoDisco.CantCanciones.ToString();
                     txtUrlImg.Text = nuevoDisco.UrlImagen;
                     dateTimePicker.Value = nuevoDisco.FechaLanzamiento;
+                    //txtEstado.Text = nuevoDisco.Estado.ToString();//
                     cmbEstilo.SelectedValue = nuevoDisco.Estilo.Id;
                     cmbEdicion.SelectedValue = nuevoDisco.TipoEdicion.Id;
                     cargarImagen(nuevoDisco.UrlImagen);

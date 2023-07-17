@@ -88,7 +88,7 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("UPDATE DISCOS SET Titulo = @titulo, FechaLanzamiento = @fechaLanzamiento, CantidadCanciones=@cantidadCanciones, UrlImagenTapa=@urlImagenTapa, IdEstilo=@idEstilo, IdTipoEdicion=@idTipoEdicion WHERE Id = @id");
+                datos.setearConsulta("UPDATE DISCOS SET Titulo = @titulo, FechaLanzamiento = @fechaLanzamiento, CantidadCanciones=@cantidadCanciones, UrlImagenTapa=@urlImagenTapa, IdEstilo=@idEstilo, IdTipoEdicion=@idTipoEdicion WHERE Id = @id"); //Estado=@estado
                 datos.setearParametros("@titulo", disco.Titulo);
                 datos.setearParametros("@fechaLanzamiento",disco.FechaLanzamiento);
                 datos.setearParametros("@cantidadCanciones",disco.CantCanciones);
@@ -96,6 +96,7 @@ namespace Negocio
                 datos.setearParametros("@idEstilo",disco.Estilo.Id);
                 datos.setearParametros("@idTipoEdicion",disco.TipoEdicion.Id);
                 datos.setearParametros("@id",disco.Id);
+                //datos.setearParametros("@estado", disco.Estado);//para cambiar el estado de listaPapelera
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
@@ -144,6 +145,46 @@ namespace Negocio
             }
             
             
+        }
+        public List<Disco> mostrarPapelera()
+        {
+            List<Disco> lista = new List<Disco>();
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("SELECT D.Id, Titulo,FechaLanzamiento, CantidadCanciones,UrlImagenTapa, Estado ,IdEstilo,E.Descripcion AS Estilo ,IdTipoEdicion, T.Descripcion AS TipoEdicion FROM DISCOS D inner join Estilos as E on D.IdEstilo = E.Id inner join TIPOSEDICION as T on D.IdTipoEdicion = T.Id AND Estado = 0");
+                datos.leerTabla();
+                while (datos.Lector.Read())
+                {
+                    Disco disco = new Disco();
+                    disco.Id = (int)datos.Lector["id"];
+                    disco.Titulo = (string)datos.Lector["titulo"];
+                    disco.FechaLanzamiento = (DateTime)datos.Lector["FechaLanzamiento"];
+                    disco.CantCanciones = (int)datos.Lector["cantidadCanciones"];
+                    disco.UrlImagen = (string)datos.Lector["urlImagenTapa"];
+
+                    disco.Estilo = new Estilo();
+                    disco.Estilo.Id = (int)datos.Lector["IdEstilo"];
+                    disco.Estilo.Descripcion = (string)datos.Lector["Estilo"];
+                    
+                    disco.TipoEdicion = new TipoEdicion();
+                    disco.TipoEdicion.Id = (int)datos.Lector["IdTipoEdicion"];
+                    disco.TipoEdicion.Descripcion = (string)datos.Lector["TipoEdicion"];
+
+                    lista.Add(disco);
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrar();
+            }
         }
         public List<Disco> filtrar(string campo, string criterio, string txtCombo)
         {
@@ -233,7 +274,7 @@ namespace Negocio
                     }
                 }
 
-                consultaFiltro += " AND Estado = 1 ";
+                consultaFiltro += " AND Estado = 1 "; //evita que se vean los discos en Papelera
                 datos.setearConsulta(consultaFiltro);
                 datos.leerTabla();
                 while (datos.Lector.Read())

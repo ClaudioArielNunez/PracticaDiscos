@@ -46,6 +46,8 @@
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.btnAgregarImg = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.lblEstado = new System.Windows.Forms.Label();
+            this.txtEstado = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbImgDisco)).BeginInit();
             this.SuspendLayout();
             // 
@@ -165,7 +167,7 @@
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(459, 444);
+            this.btnOk.Location = new System.Drawing.Point(459, 455);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(133, 45);
             this.btnOk.TabIndex = 6;
@@ -175,7 +177,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(638, 444);
+            this.btnCancel.Location = new System.Drawing.Point(638, 455);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(133, 45);
             this.btnCancel.TabIndex = 7;
@@ -210,11 +212,30 @@
             this.label7.TabIndex = 11;
             this.label7.Text = "Agregar desde carpeta:";
             // 
+            // lblEstado
+            // 
+            this.lblEstado.AutoSize = true;
+            this.lblEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstado.Location = new System.Drawing.Point(406, 414);
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Size = new System.Drawing.Size(146, 22);
+            this.lblEstado.TabIndex = 12;
+            this.lblEstado.Text = "Modificar estado:";
+            // 
+            // txtEstado
+            // 
+            this.txtEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEstado.Location = new System.Drawing.Point(593, 412);
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.Size = new System.Drawing.Size(178, 28);
+            this.txtEstado.TabIndex = 0;
+            // 
             // AgregarDisco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 573);
+            this.Controls.Add(this.lblEstado);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnAgregarImg);
             this.Controls.Add(this.dateTimePicker);
@@ -230,6 +251,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtEstado);
             this.Controls.Add(this.txtTitulo);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -261,5 +283,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.Button btnAgregarImg;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblEstado;
+        private System.Windows.Forms.TextBox txtEstado;
     }
 }
