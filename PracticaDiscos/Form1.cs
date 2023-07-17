@@ -339,7 +339,7 @@ namespace PracticaDiscos
                 }
                 else
                 {
-                    pbImgDisco.Load("https://images.vexels.com/media/users/3/149953/isolated/preview/52364c140c4876f5d7296471f14959f6-silueta-de-cantante-de-banda-de-musica.png");
+                    pbImgDisco.Load("https://www.pngall.com/wp-content/uploads/3/Band-Silhouette-Transparent.png");
                 }
                 
 

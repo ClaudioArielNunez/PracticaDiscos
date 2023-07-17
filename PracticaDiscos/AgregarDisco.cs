@@ -106,7 +106,7 @@ namespace PracticaDiscos
                     txtCanciones.Text = nuevoDisco.CantCanciones.ToString();
                     txtUrlImg.Text = nuevoDisco.UrlImagen;
                     dateTimePicker.Value = nuevoDisco.FechaLanzamiento;
-                    //txtEstado.Text = nuevoDisco.Estado.ToString();//
+                    
                     cmbEstilo.SelectedValue = nuevoDisco.Estilo.Id;
                     cmbEdicion.SelectedValue = nuevoDisco.TipoEdicion.Id;
                     cargarImagen(nuevoDisco.UrlImagen);
@@ -134,7 +134,7 @@ namespace PracticaDiscos
            }
            catch (Exception ex)
            {
-                pbImgDisco.Load("https://cdn-icons-png.flaticon.com/512/1178/1178479.png");
+                pbImgDisco.Load("https://images.vexels.com/media/users/3/145816/isolated/preview/7616b64374d1ecc318e9d638807c4d61-logotipo-de-signo-de-musica-rock.png");
                //MessageBox.Show("No se pudo cargar la imagen\nEl error se debe a: "+ex.ToString());
            }
         }
