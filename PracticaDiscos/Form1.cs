@@ -257,6 +257,10 @@ namespace PracticaDiscos
             NegocioDisco negocio = new NegocioDisco();
             try
             {
+                if (validarFiltro())
+                {
+                    return;
+                }
                 string campo = cboCampo.SelectedItem.ToString();
                 string criterio = cboCriterio.SelectedItem.ToString();
                 string filtro = txtFiltroCombo.Text;
@@ -276,6 +280,47 @@ namespace PracticaDiscos
 
                 MessageBox.Show(ex.ToString());
             }
+        }
+        private bool validarFiltro()
+        {
+            if(cboCampo.SelectedIndex < 0)
+            {
+                MessageBox.Show("Por favor, seleccione el campo a filtrar");
+                return true;
+            }
+            
+            if(cboCriterio.SelectedIndex < 0)
+            {
+                MessageBox.Show("Por favor, seleccione el criterio a filtrar");
+                return true;
+            }
+
+            if(cboCampo.SelectedItem.ToString() == "Cantidad Canciones")
+            {
+                if (string.IsNullOrEmpty(txtFiltroCombo.Text))
+                {
+                    MessageBox.Show("Cargar cantidad de canciones");
+                    return true;
+                }
+                if (!(soloNumeros(txtFiltroCombo.Text)))
+                {
+                    MessageBox.Show("Ingrese solo números");
+                    return true;
+                }
+            }
+
+            return false;
+        }
+        private bool soloNumeros(string cadena)
+        {
+            foreach(char caracter in cadena)
+            {
+                if (!(char.IsNumber(caracter)))
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         private void btnVerPapelera_Click(object sender, EventArgs e)
