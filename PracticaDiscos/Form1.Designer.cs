@@ -56,7 +56,7 @@
             this.textFiltro.Location = new System.Drawing.Point(759, 112);
             this.textFiltro.Name = "textFiltro";
             this.textFiltro.Size = new System.Drawing.Size(198, 26);
-            this.textFiltro.TabIndex = 3;
+            this.textFiltro.TabIndex = 10;
             this.textFiltro.TextChanged += new System.EventHandler(this.textFiltro_TextChanged);
             // 
             // label1
@@ -75,7 +75,7 @@
             this.btnAgregar.Location = new System.Drawing.Point(492, 476);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(142, 42);
-            this.btnAgregar.TabIndex = 1;
+            this.btnAgregar.TabIndex = 5;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -108,7 +108,7 @@
             this.btnModificar.Location = new System.Drawing.Point(663, 476);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(142, 42);
-            this.btnModificar.TabIndex = 2;
+            this.btnModificar.TabIndex = 6;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
@@ -118,7 +118,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(835, 477);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(142, 42);
-            this.btnEliminar.TabIndex = 5;
+            this.btnEliminar.TabIndex = 7;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -128,7 +128,7 @@
             this.btnPapelera.Location = new System.Drawing.Point(1007, 477);
             this.btnPapelera.Name = "btnPapelera";
             this.btnPapelera.Size = new System.Drawing.Size(156, 42);
-            this.btnPapelera.TabIndex = 6;
+            this.btnPapelera.TabIndex = 8;
             this.btnPapelera.Text = "Enviar a Papelera";
             this.btnPapelera.UseVisualStyleBackColor = true;
             this.btnPapelera.Click += new System.EventHandler(this.btnPapelera_Click);
@@ -139,7 +139,7 @@
             this.btnFiltrar.Location = new System.Drawing.Point(977, 109);
             this.btnFiltrar.Name = "btnFiltrar";
             this.btnFiltrar.Size = new System.Drawing.Size(80, 32);
-            this.btnFiltrar.TabIndex = 7;
+            this.btnFiltrar.TabIndex = 11;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = false;
             this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
@@ -169,7 +169,7 @@
             this.txtFiltroCombo.Location = new System.Drawing.Point(1176, 51);
             this.txtFiltroCombo.Name = "txtFiltroCombo";
             this.txtFiltroCombo.Size = new System.Drawing.Size(160, 26);
-            this.txtFiltroCombo.TabIndex = 10;
+            this.txtFiltroCombo.TabIndex = 3;
             // 
             // cboCampo
             // 
@@ -178,7 +178,7 @@
             this.cboCampo.Location = new System.Drawing.Point(679, 47);
             this.cboCampo.Name = "cboCampo";
             this.cboCampo.Size = new System.Drawing.Size(198, 28);
-            this.cboCampo.TabIndex = 11;
+            this.cboCampo.TabIndex = 1;
             this.cboCampo.SelectedIndexChanged += new System.EventHandler(this.cboCampo_SelectedIndexChanged);
             // 
             // lblFiltro
@@ -198,14 +198,14 @@
             this.cboCriterio.Location = new System.Drawing.Point(963, 49);
             this.cboCriterio.Name = "cboCriterio";
             this.cboCriterio.Size = new System.Drawing.Size(143, 28);
-            this.cboCriterio.TabIndex = 13;
+            this.cboCriterio.TabIndex = 2;
             // 
             // btnFiltrarAvanzado
             // 
             this.btnFiltrarAvanzado.Location = new System.Drawing.Point(1229, 9);
             this.btnFiltrarAvanzado.Name = "btnFiltrarAvanzado";
             this.btnFiltrarAvanzado.Size = new System.Drawing.Size(110, 32);
-            this.btnFiltrarAvanzado.TabIndex = 14;
+            this.btnFiltrarAvanzado.TabIndex = 4;
             this.btnFiltrarAvanzado.Text = "Filtrar";
             this.btnFiltrarAvanzado.UseVisualStyleBackColor = true;
             this.btnFiltrarAvanzado.Click += new System.EventHandler(this.btnFiltrarDos_Click);
@@ -215,7 +215,7 @@
             this.btnVerPapelera.Location = new System.Drawing.Point(1193, 477);
             this.btnVerPapelera.Name = "btnVerPapelera";
             this.btnVerPapelera.Size = new System.Drawing.Size(156, 42);
-            this.btnVerPapelera.TabIndex = 15;
+            this.btnVerPapelera.TabIndex = 9;
             this.btnVerPapelera.Text = "Ver Papelera";
             this.btnVerPapelera.UseVisualStyleBackColor = true;
             this.btnVerPapelera.Click += new System.EventHandler(this.btnVerPapelera_Click);
