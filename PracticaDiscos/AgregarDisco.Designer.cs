@@ -47,7 +47,7 @@
             this.btnAgregarImg = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.lblEstado = new System.Windows.Forms.Label();
-            this.txtEstado = new System.Windows.Forms.TextBox();
+            this.radioBtn = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbImgDisco)).BeginInit();
             this.SuspendLayout();
             // 
@@ -218,23 +218,27 @@
             this.lblEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstado.Location = new System.Drawing.Point(406, 414);
             this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(146, 22);
+            this.lblEstado.Size = new System.Drawing.Size(166, 22);
             this.lblEstado.TabIndex = 12;
-            this.lblEstado.Text = "Modificar estado:";
+            this.lblEstado.Text = "Quitar de Papelera:";
             // 
-            // txtEstado
+            // radioBtn
             // 
-            this.txtEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEstado.Location = new System.Drawing.Point(593, 412);
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(178, 28);
-            this.txtEstado.TabIndex = 0;
+            this.radioBtn.AutoSize = true;
+            this.radioBtn.Location = new System.Drawing.Point(674, 415);
+            this.radioBtn.Name = "radioBtn";
+            this.radioBtn.Size = new System.Drawing.Size(82, 24);
+            this.radioBtn.TabIndex = 13;
+            this.radioBtn.TabStop = true;
+            this.radioBtn.Text = "Activar";
+            this.radioBtn.UseVisualStyleBackColor = true;
             // 
             // AgregarDisco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 573);
+            this.Controls.Add(this.radioBtn);
             this.Controls.Add(this.lblEstado);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnAgregarImg);
@@ -251,7 +255,6 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtEstado);
             this.Controls.Add(this.txtTitulo);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -284,6 +287,6 @@
         private System.Windows.Forms.Button btnAgregarImg;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblEstado;
-        private System.Windows.Forms.TextBox txtEstado;
+        private System.Windows.Forms.RadioButton radioBtn;
     }
 }

@@ -20,13 +20,18 @@ namespace PracticaDiscos
         public AgregarDisco()
         {
             InitializeComponent();
-            txtEstado.Visible = false;
+            radioBtn.Visible = false;
             lblEstado.Visible = false;
         }
         public AgregarDisco(Disco disco) //metodo para boton modificar
         {
             InitializeComponent();
             this.nuevoDisco = disco;
+            if (disco.Estado)
+            {
+                radioBtn.Visible = false;
+                lblEstado.Visible = false;
+            }
         }
 
         //Disco nuevoDisco = new Disco();
@@ -45,6 +50,10 @@ namespace PracticaDiscos
                 nuevoDisco.CantCanciones = int.Parse(txtCanciones.Text);
                 nuevoDisco.UrlImagen = txtUrlImg.Text;
                 
+                if (radioBtn.Checked)//para modificar estado en Papelera
+                {
+                    nuevoDisco.Estado = true;
+                }
                 
                 nuevoDisco.Estilo = (Estilo)cmbEstilo.SelectedItem;
                 nuevoDisco.TipoEdicion = (TipoEdicion)cmbEdicion.SelectedItem;

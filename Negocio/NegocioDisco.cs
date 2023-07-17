@@ -30,6 +30,7 @@ namespace Negocio
                     nuevoDisco.FechaLanzamiento = (DateTime)(datos.Lector["fechaLanzamiento"]);
                     nuevoDisco.CantCanciones = (int)datos.Lector["cantidadCanciones"];
                     nuevoDisco.UrlImagen = (string)datos.Lector["urlImagenTapa"];
+                    nuevoDisco.Estado = (bool)datos.Lector["Estado"];//
 
                     nuevoDisco.Estilo = new Estilo();
                     nuevoDisco.Estilo.Id = (int)datos.Lector["IdEstilo"];//necesario para el frm modificar
@@ -88,7 +89,7 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("UPDATE DISCOS SET Titulo = @titulo, FechaLanzamiento = @fechaLanzamiento, CantidadCanciones=@cantidadCanciones, UrlImagenTapa=@urlImagenTapa, IdEstilo=@idEstilo, IdTipoEdicion=@idTipoEdicion WHERE Id = @id"); //Estado=@estado
+                datos.setearConsulta("UPDATE DISCOS SET Titulo = @titulo, FechaLanzamiento = @fechaLanzamiento, CantidadCanciones=@cantidadCanciones, UrlImagenTapa=@urlImagenTapa, Estado=@estado,IdEstilo=@idEstilo, IdTipoEdicion=@idTipoEdicion WHERE Id = @id"); //
                 datos.setearParametros("@titulo", disco.Titulo);
                 datos.setearParametros("@fechaLanzamiento",disco.FechaLanzamiento);
                 datos.setearParametros("@cantidadCanciones",disco.CantCanciones);
@@ -96,7 +97,7 @@ namespace Negocio
                 datos.setearParametros("@idEstilo",disco.Estilo.Id);
                 datos.setearParametros("@idTipoEdicion",disco.TipoEdicion.Id);
                 datos.setearParametros("@id",disco.Id);
-                //datos.setearParametros("@estado", disco.Estado);//para cambiar el estado de listaPapelera
+                datos.setearParametros("@estado", disco.Estado);//para cambiar el estado de listaPapelera
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
@@ -274,7 +275,7 @@ namespace Negocio
                     }
                 }
 
-                consultaFiltro += " AND Estado = 1 "; //evita que se vean los discos en Papelera
+                //consultaFiltro += " AND Estado = 1 "; //evita que se vean los discos en Papelera
                 datos.setearConsulta(consultaFiltro);
                 datos.leerTabla();
                 while (datos.Lector.Read())
