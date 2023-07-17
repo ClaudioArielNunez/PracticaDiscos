@@ -325,7 +325,7 @@ namespace PracticaDiscos
 
         private void btnVerPapelera_Click(object sender, EventArgs e)
         {
-            NegocioDisco negocio = new NegocioDisco();
+            NegocioDisco negocio = new NegocioDisco(); ;
             try
             {
                 List<Disco> listaEnPapelera = new List<Disco>();
@@ -333,8 +333,20 @@ namespace PracticaDiscos
                 dgvDiscos.DataSource = listaEnPapelera;
                 dgvDiscos.Columns["UrlImagen"].Visible = false;
                 dgvDiscos.Columns["Id"].Visible = false;
-                pbImgDisco.Load(listaEnPapelera[0].UrlImagen);
+                if(listaEnPapelera.Count > 0)
+                {
+                    pbImgDisco.Load(listaEnPapelera[0].UrlImagen);
+                }
+                else
+                {
+                    pbImgDisco.Load("https://images.vexels.com/media/users/3/149953/isolated/preview/52364c140c4876f5d7296471f14959f6-silueta-de-cantante-de-banda-de-musica.png");
+                }
+                
 
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
             catch (Exception ex)
             {
